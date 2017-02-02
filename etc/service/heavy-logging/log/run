@@ -1,0 +1,10 @@
+#!/bin/bash -e
+
+mkdir -p /var/log/heavy-logging
+chown nobody:nogroup /var/log/heavy-logging
+
+# Force log rotation every 2000 bytes.
+echo s2000 > /var/log/heavy-logging/config
+
+exec chpst -u nobody:nogroup svlogd -tt /var/log/heavy-logging
+
