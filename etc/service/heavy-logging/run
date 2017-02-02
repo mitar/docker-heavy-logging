@@ -2,4 +2,5 @@
 
 while true; do
   date
+  echo -e 'first\nsecond\nthird\nline'
 done
